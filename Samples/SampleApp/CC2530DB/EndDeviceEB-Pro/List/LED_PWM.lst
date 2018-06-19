@@ -1,0 +1,755 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.3.10338/W32 for 8051         09/Jun/2018  13:10:37 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source #
+#                          \LED_PWM.c                                         #
+#    Command line       =  -f C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg         #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg           #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source #
+#                          \LED_PWM.c -D ZIGBEEPRO -D NWK_AUTO_POLL -D        #
+#                          ZTOOL_P1 -D xMT_TASK -D xMT_SYS_FUNC -D            #
+#                          xMT_ZDO_FUNC -D NV_INIT -D NV_RESTORE -D           #
+#                          LCD_SUPPORTED=DEBUG -lC C:\Users\korny\Desktop\ÎïÁ #
+#                          ªÍø¿ÎÉè\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\EndDeviceEB-Pro\List\   #
+#                          -lA C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC253 #
+#                          0-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\EndDeviceEB-Pro\List\ --diag_suppress       #
+#                          Pe001,Pa010 -o C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\Z #
+#                          Stack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\S #
+#                          ampleApp\CC2530DB\EndDeviceEB-Pro\Obj\ -e --debug  #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\korny\Desktop\ÎïÁ #
+#                          ªÍø¿ÎÉè\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ #
+#                          Samples\SampleApp\CC2530DB\ -I                     #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\SOURCE\ -I C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè #
+#                          \ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples #
+#                          \SampleApp\CC2530DB\..\..\..\ZMAIN\TI2530DB\ -I    #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\MT\ -I                #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\HAL\INCLUDE\ -I       #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\HAL\TARGET\CC2530EB\  #
+#                          -I C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\    #
+#                          -I C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\ -I   #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\AF\ -I          #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\NWK\ -I         #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SEC\ -I         #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\ -I        #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SYS\ -I         #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\ -I         #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\ -I          #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\ZMAC\ -I              #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SADDR\ -I    #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\SERVICES\SDATA\ -I    #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\MAC\INCLUDE\ -I       #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\MAC\HIGH_LEVEL\ -I    #
+#                          C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\  #
+#                          -I C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530 #
+#                          -2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2 #
+#                          530DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf0 #
+#                          4\SINGLE_CHIP\ -Ohz --require_prototypes           #
+#    List file          =  C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\EndDeviceEB-Pro\List\LED_PWM.lst                #
+#    Object file        =  C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2. #
+#                          3.0-1.4.0\Projects\zstack\Samples\SampleApp\CC2530 #
+#                          DB\EndDeviceEB-Pro\Obj\LED_PWM.r51                 #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\korny\Desktop\ÎïÁªÍø¿ÎÉè\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SampleApp\Source\LED_PWM.c
+      1          #include "LED_PWM.h"
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x9e
+   \   unsigned char volatile __sfr CLKCONSTA
+   \                     CLKCONSTA:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xc6
+   \   unsigned char volatile __sfr CLKCONCMD
+   \                     CLKCONCMD:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xda
+   \   unsigned char volatile __sfr T1CC0L
+   \                     T1CC0L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdb
+   \   unsigned char volatile __sfr T1CC0H
+   \                     T1CC0H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdc
+   \   unsigned char volatile __sfr T1CC1L
+   \                     T1CC1L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdd
+   \   unsigned char volatile __sfr T1CC1H
+   \                     T1CC1H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xde
+   \   unsigned char volatile __sfr T1CC2L
+   \                     T1CC2L:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xdf
+   \   unsigned char volatile __sfr T1CC2H
+   \                     T1CC2H:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe4
+   \   unsigned char volatile __sfr T1CTL
+   \                     T1CTL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe6
+   \   unsigned char volatile __sfr T1CCTL1
+   \                     T1CCTL1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xe7
+   \   unsigned char volatile __sfr T1CCTL2
+   \                     T1CCTL2:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf1
+   \   unsigned char volatile __sfr PERCFG
+   \                     PERCFG:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf4
+   \   unsigned char volatile __sfr P1SEL
+   \                     P1SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xf5
+   \   unsigned char volatile __sfr P2SEL
+   \                     P2SEL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xff
+   \   unsigned char volatile __sfr P2DIR
+   \                     P2DIR:
+   \   000000                DS 1
+      2          
+      3          
+      4          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      5          void DelayMs(uint msec)
+   \                     DelayMs:
+      6          { 
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      7              uint i,j;
+      8              
+      9              for (i=0; i<msec; i++)
+   \   000000   7800         MOV     R0,#0x0
+   \   000002   7900         MOV     R1,#0x0
+   \   000004   8008         SJMP    ??DelayMs_0
+     10                  for (j=0; j<535; j++);
+   \                     ??DelayMs_1:
+   \   000006   E8           MOV     A,R0
+   \   000007   2401         ADD     A,#0x1
+   \   000009   08           INC     R0
+   \   00000A   E9           MOV     A,R1
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F9           MOV     R1,A
+   \                     ??DelayMs_0:
+   \   00000E   C3           CLR     C
+   \   00000F   E8           MOV     A,R0
+   \   000010   9A           SUBB    A,R2
+   \   000011   E9           MOV     A,R1
+   \   000012   9B           SUBB    A,R3
+   \   000013   40F1         JC      ??DelayMs_1
+     11          }
+   \   000015   02....       LJMP    ?BRET
+     12          /****************************************************************************
+     13          * Ãû    ³Æ: InitLed()
+     14          * ¹¦    ÄÜ: ÉèÖÃLEDµÆÏàÓ¦µÄIO¿Ú
+     15          * Èë¿Ú²ÎÊý: ÎÞ
+     16          * ³ö¿Ú²ÎÊý: ÎÞ
+     17          ****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     18          void  InitLed(void)
+   \                     InitLed:
+     19          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     20             P1DIR |= 0x01;           //P1.0¶¨ÒåÎªÊä³ö
+   \   000000   43FE01       ORL     0xfe,#0x1
+     21             LED1 = 1;                //Ê¹LED1µÆÉÏµçÄ¬ÈÏÎªÏ¨Ãð   
+   \   000003   D290         SETB    0x90.0
+     22             
+     23          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE P1DIR
+   \   000008                REQUIRE _A_P1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void P10_Normal_IO(void) 
+   \                     P10_Normal_IO:
+     25          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     26              P1SEL &=~ 0x01;  
+   \   000000   53F4FE       ANL     0xf4,#0xfe
+     27             
+     28          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P1SEL
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     29          void P11_Normal_IO(void) 
+   \                     P11_Normal_IO:
+     30          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     31              P1SEL &=~ 0x02;  
+   \   000000   53F4FD       ANL     0xf4,#0xfd
+     32             
+     33          }
+   \   000003   02....       LJMP    ?BRET
+   \   000006                REQUIRE P1SEL
+     34          /****************************************************************************
+     35          * Ãû    ³Æ: InitT1()
+     36          * ¹¦    ÄÜ: ¶¨Ê±Æ÷³õÊ¼»¯£¬TICKSPD ÊÇ16 MHzÏµÍ³²»ÅäÖÃÊ±Ä¬ÈÏÊÇ2·ÖÆµ£¬¼´16MHz
+     37          * Èë¿Ú²ÎÊý: ÎÞ
+     38          * ³ö¿Ú²ÎÊý: ÎÞ
+     39          ****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     40          void LedPwm_Init(uchar choice)
+   \                     LedPwm_Init:
+     41          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     42            
+     43              CLKCONCMD &= ~0x40;      //ÉèÖÃÏµÍ³Ê±ÖÓÔ´Îª32MHZ¾§Õñ
+   \   000000   53C6BF       ANL     0xc6,#0xbf
+     44              while(CLKCONSTA & 0x40); //µÈ´ý¾§ÕñÎÈ¶¨Îª32M
+   \                     ??LedPwm_Init_0:
+   \   000003   E59E         MOV     A,0x9e
+   \   000005   A2E6         MOV     C,0xE0 /* A   */.6
+   \   000007   40FA         JC      ??LedPwm_Init_0
+     45              CLKCONCMD &= ~0x07;      //ÉèÖÃÏµÍ³Ö÷Ê±ÖÓÆµÂÊÎª32MHZ   
+   \   000009   53C6F8       ANL     0xc6,#0xf8
+     46              CLKCONCMD |= 0x38;       //Ê±ÖÓËÙ¶È32 MHz ¶¨Ê±Æ÷±ê¼ÇÊä³öÉèÖÃ[5:3]250kHz
+   \   00000C   43C638       ORL     0xc6,#0x38
+     47          
+     48              PERCFG |= 0x40;          //¶¨Ê±Æ÷1 µÄIOÎ»ÖÃ   1:±¸ÓÃÎ»ÖÃ2 
+   \   00000F   43F140       ORL     0xf1,#0x40
+     49              P2SEL &= ~0x10;          //¶¨Ê±Æ÷1ÓÅÏÈ
+   \   000012   53F5EF       ANL     0xf5,#0xef
+     50              P2DIR |= 0xC0;           //µÚ1ÓÅÏÈ¼¶£º¶¨Ê±Æ÷1Í¨µÀ2-3
+   \   000015   43FFC0       ORL     0xff,#0xc0
+     51              if(choice==0)
+   \   000018   E9           MOV     A,R1
+   \   000019   7005         JNZ     ??LedPwm_Init_1
+     52              {
+     53                 P1DIR |= 0x01;           //¶Ë¿Ú0ÎªÊä³ö    
+   \   00001B   12....       LCALL   ?Subroutine2 & 0xFFFF
+     54                 P1SEL |= 0x01;           //timer1 Í¨µÀ2Ó³Éä¿ÚP1_0
+     55              
+     56                 T1CC2H = 0x00;           //20%Õ¼¿Õ±ÈÎª200us
+     57                 T1CC2L = 0x01;           //ÐÞ¸ÄT1CC2L¿Éµ÷ÕûledµÄÁÁ¶È
+     58                 T1CCTL2 = 0x1c;          // Ä£Ê½Ñ¡Ôñ Í¨µÀ2±È½ÏÄ£Ê½
+     59              }
+   \                     ??CrossCallReturnLabel_4:
+   \   00001E   8017         SJMP    ??LedPwm_Init_2
+     60             
+     61              else if(choice==1)
+   \                     ??LedPwm_Init_1:
+   \   000020   7401         MOV     A,#0x1
+   \   000022   69           XRL     A,R1
+   \   000023   6003         JZ      ??CrossCallReturnLabel_5
+     62              {
+     63                P1DIR |= 0x02;   //¶Ë¿Ú1ÎªÊä³ö 
+     64                P1SEL |= 0x02;   //timer1 Í¨µÀ1Ó³Éä¿ÚP1_1
+     65                  
+     66                T1CC1H = 0x00;           //20%Õ¼¿Õ±ÈÎª200us
+     67                T1CC1L = 0x01;           //ÐÞ¸ÄT1CC2L¿Éµ÷ÕûledµÄÁÁ¶È
+     68                T1CCTL1 = 0x1c;          // Ä£Ê½Ñ¡Ôñ Í¨µÀ2±È½ÏÄ£Ê½
+     69              
+     70              }
+     71              
+     72              else
+     73              {
+     74                 P1DIR |= 0x01;           //¶Ë¿Ú0ÎªÊä³ö    
+   \   000025   12....       LCALL   ?Subroutine2 & 0xFFFF
+     75                 P1SEL |= 0x01;           //timer1 Í¨µÀ2Ó³Éä¿ÚP1_0
+     76              
+     77                 T1CC2H = 0x00;           //20%Õ¼¿Õ±ÈÎª200us
+     78                 T1CC2L = 0x01;           //ÐÞ¸ÄT1CC2L¿Éµ÷ÕûledµÄÁÁ¶È
+     79                 T1CCTL2 = 0x1c;          // Ä£Ê½Ñ¡Ôñ Í¨µÀ2±È½ÏÄ£Ê½
+     80                 
+     81                 P1DIR |= 0x02;   //¶Ë¿Ú1ÎªÊä³ö 
+   \                     ??CrossCallReturnLabel_5:
+   \   000028   43FE02       ORL     0xfe,#0x2
+     82                 P1SEL |= 0x02;   //timer1 Í¨µÀ1Ó³Éä¿ÚP1_1
+   \   00002B   43F402       ORL     0xf4,#0x2
+     83                  
+     84                T1CC1H = 0x00;           //20%Õ¼¿Õ±ÈÎª200us
+   \   00002E   75DD00       MOV     0xdd,#0x0
+     85                T1CC1L = 0x01;           //ÐÞ¸ÄT1CC2L¿Éµ÷ÕûledµÄÁÁ¶È
+   \   000031   75DC01       MOV     0xdc,#0x1
+     86                T1CCTL1 = 0x1c;          // Ä£Ê½Ñ¡Ôñ Í¨µÀ2±È½ÏÄ£Ê½
+   \   000034   75E61C       MOV     0xe6,#0x1c
+     87              }
+     88              T1CC0H = 0x00;           //1msµÄÖÜÆÚÊ±ÖÓ,ÆµÂÊÎª976.516HZ
+   \                     ??LedPwm_Init_2:
+   \   000037   75DB00       MOV     0xdb,#0x0
+     89              T1CC0L = 0xff; 
+   \   00003A   75DAFF       MOV     0xda,#-0x1
+     90              T1CTL = 0x02;            //250KHz 1·ÖÆµ
+   \   00003D   75E402       MOV     0xe4,#0x2
+     91          }
+   \   000040   02....       LJMP    ?BRET
+   \   000043                REQUIRE CLKCONCMD
+   \   000043                REQUIRE CLKCONSTA
+   \   000043                REQUIRE PERCFG
+   \   000043                REQUIRE P2SEL
+   \   000043                REQUIRE P2DIR
+   \   000043                REQUIRE P1DIR
+   \   000043                REQUIRE P1SEL
+   \   000043                REQUIRE T1CC2H
+   \   000043                REQUIRE T1CC2L
+   \   000043                REQUIRE T1CCTL2
+   \   000043                REQUIRE T1CC1H
+   \   000043                REQUIRE T1CC1L
+   \   000043                REQUIRE T1CCTL1
+   \   000043                REQUIRE T1CC0H
+   \   000043                REQUIRE T1CC0L
+   \   000043                REQUIRE T1CTL
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   43FE01       ORL     0xfe,#0x1
+   \   000003   43F401       ORL     0xf4,#0x1
+   \   000006   75DF00       MOV     0xdf,#0x0
+   \   000009   75DE01       MOV     0xde,#0x1
+   \   00000C   75E71C       MOV     0xe7,#0x1c
+   \   00000F   22           RET
+     92          
+     93          /****************************************************************************
+     94          * ³ÌÐòÈë¿Úº¯Êý
+     95          ****************************************************************************/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     96          void Use_LedPwm(uchar choice,uchar flag)
+   \                     Use_LedPwm:
+     97          {
+   \   000000   74F4         MOV     A,#-0xc
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 12
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 2,R1
+   \   000007   8A..         MOV     ?V0 + 3,R2
+     98             
+     99              unsigned int counter=0;
+    100              unsigned int counter_down=0;
+    101             
+    102              //InitLed();		         //µ÷ÓÃ³õÊ¼»¯º¯Êý
+    103              LedPwm_Init(choice);                //¶¨Ê±Æ÷³õÊ¼»¯¼°pwmÅäÖÃ
+   \   000009                ; Setup parameters for call to function LedPwm_Init
+   \   000009   12....       LCALL   ??LedPwm_Init?relay
+    104              if(choice==0)
+   \   00000C   E5..         MOV     A,?V0 + 2
+   \   00000E   7026         JNZ     ??Use_LedPwm_0
+    105              {
+    106                 if(flag)
+   \   000010   E5..         MOV     A,?V0 + 3
+   \   000012   6011         JZ      ??Use_LedPwm_1
+    107                 {
+    108                    counter=1;
+   \   000014   7E01         MOV     R6,#0x1
+   \   000016   7F00         MOV     R7,#0x0
+    109                    while(counter<0xF7)
+    110                    {
+    111                      T1CC2H = 0x00;
+   \                     ??Use_LedPwm_2:
+   \   000018   75DF00       MOV     0xdf,#0x0
+    112                      T1CC2L = counter; 
+   \   00001B   EE           MOV     A,R6
+   \   00001C   F5DE         MOV     0xde,A
+    113                      counter++;
+   \   00001E   12....       LCALL   ?Subroutine0 & 0xFFFF
+    114                      DelayMs(25000);
+    115                    }
+    116                 }
+   \                     ??CrossCallReturnLabel_0:
+   \   000021   5078         JNC     ??Use_LedPwm_3
+   \   000023   80F3         SJMP    ??Use_LedPwm_2
+    117                 else
+    118                 {
+    119                   counter=0XF7;
+   \                     ??Use_LedPwm_1:
+   \   000025   7EF7         MOV     R6,#-0x9
+   \   000027   7F00         MOV     R7,#0x0
+    120                   while(counter>1)
+    121                   {
+    122                      T1CC2H = 0x00;
+   \                     ??Use_LedPwm_4:
+   \   000029   75DF00       MOV     0xdf,#0x0
+    123                      T1CC2L = counter; 
+   \   00002C   EE           MOV     A,R6
+   \   00002D   F5DE         MOV     0xde,A
+    124                      counter--;
+   \   00002F   12....       LCALL   ?Subroutine1 & 0xFFFF
+    125                      DelayMs(20000);
+    126                   }
+    127                 
+    128                 }
+    129              }
+   \                     ??CrossCallReturnLabel_2:
+   \   000032   4067         JC      ??Use_LedPwm_3
+   \   000034   80F3         SJMP    ??Use_LedPwm_4
+    130              
+    131             else if(choice==1)
+   \                     ??Use_LedPwm_0:
+   \   000036   7401         MOV     A,#0x1
+   \   000038   65..         XRL     A,?V0 + 2
+   \   00003A   7026         JNZ     ??Use_LedPwm_5
+    132              {
+    133                 if(flag)
+   \   00003C   E5..         MOV     A,?V0 + 3
+   \   00003E   6011         JZ      ??Use_LedPwm_6
+    134                 {
+    135                    counter=1;
+   \   000040   7E01         MOV     R6,#0x1
+   \   000042   7F00         MOV     R7,#0x0
+    136                    while(counter<0xF7)
+    137                    {
+    138                      T1CC1H = 0x00;
+   \                     ??Use_LedPwm_7:
+   \   000044   75DD00       MOV     0xdd,#0x0
+    139                      T1CC1L = counter; 
+   \   000047   EE           MOV     A,R6
+   \   000048   F5DC         MOV     0xdc,A
+    140                      counter++;
+   \   00004A   12....       LCALL   ?Subroutine0 & 0xFFFF
+    141                      DelayMs(25000);
+    142                    }
+    143                 }
+   \                     ??CrossCallReturnLabel_1:
+   \   00004D   504C         JNC     ??Use_LedPwm_3
+   \   00004F   80F3         SJMP    ??Use_LedPwm_7
+    144                 else
+    145                 {
+    146                   counter=0XF7;
+   \                     ??Use_LedPwm_6:
+   \   000051   7EF7         MOV     R6,#-0x9
+   \   000053   7F00         MOV     R7,#0x0
+    147                   while(counter>1)
+    148                   {
+    149                      T1CC1H = 0x00;
+   \                     ??Use_LedPwm_8:
+   \   000055   75DD00       MOV     0xdd,#0x0
+    150                      T1CC1L = counter; 
+   \   000058   EE           MOV     A,R6
+   \   000059   F5DC         MOV     0xdc,A
+    151                      counter--;
+   \   00005B   12....       LCALL   ?Subroutine1 & 0xFFFF
+    152                      DelayMs(20000);
+    153                   }
+    154                 
+    155                 }
+    156              }
+   \                     ??CrossCallReturnLabel_3:
+   \   00005E   403B         JC      ??Use_LedPwm_3
+   \   000060   80F3         SJMP    ??Use_LedPwm_8
+    157              
+    158              else
+    159              { //P1_0ÂýÂýÏ¨Ãð£¬P1_1ÂýÂý±äÁÁ
+    160                    counter=1;
+   \                     ??Use_LedPwm_5:
+   \   000062   7E01         MOV     R6,#0x1
+   \   000064   7F00         MOV     R7,#0x0
+    161                    counter_down=0xF7;
+   \   000066   75..F7       MOV     ?V0 + 0,#-0x9
+   \   000069   8F..         MOV     ?V0 + 1,R7
+   \   00006B   8009         SJMP    ??Use_LedPwm_9
+    162                    while( counter_down>1)
+    163                    {
+    164                      if(counter<0xF7/3)
+   \                     ??Use_LedPwm_10:
+   \   00006D   C3           CLR     C
+   \   00006E   EE           MOV     A,R6
+   \   00006F   9452         SUBB    A,#0x52
+   \   000071   EF           MOV     A,R7
+   \   000072   9400         SUBB    A,#0x0
+   \   000074   5006         JNC     ??Use_LedPwm_11
+    165                      {
+    166                         T1CC1H = 0x00;
+   \                     ??Use_LedPwm_9:
+   \   000076   75DD00       MOV     0xdd,#0x0
+    167                         T1CC1L = counter; 
+   \   000079   EE           MOV     A,R6
+   \   00007A   F5DC         MOV     0xdc,A
+    168                      }
+    169                    
+    170                      T1CC2H = 0x00;
+   \                     ??Use_LedPwm_11:
+   \   00007C   75DF00       MOV     0xdf,#0x0
+    171                      T1CC2L = counter_down;
+   \   00007F   E5..         MOV     A,?V0 + 0
+   \   000081   F5DE         MOV     0xde,A
+    172                      counter_down--;
+   \   000083   24FF         ADD     A,#-0x1
+   \   000085   F5..         MOV     ?V0 + 0,A
+   \   000087   E5..         MOV     A,?V0 + 1
+   \   000089   34FF         ADDC    A,#-0x1
+   \   00008B   F5..         MOV     ?V0 + 1,A
+    173                      counter++;
+   \   00008D   EE           MOV     A,R6
+   \   00008E   12....       LCALL   ?Subroutine3 & 0xFFFF
+    174                      DelayMs(25000);
+    175                    }
+    176              }
+   \                     ??CrossCallReturnLabel_6:
+   \   000091   E5..         MOV     A,?V0 + 0
+   \   000093   9402         SUBB    A,#0x2
+   \   000095   E5..         MOV     A,?V0 + 1
+   \   000097   9400         SUBB    A,#0x0
+   \   000099   50D2         JNC     ??Use_LedPwm_10
+    177             
+    178          }
+   \                     ??Use_LedPwm_3:
+   \   00009B   7F04         MOV     R7,#0x4
+   \   00009D   02....       LJMP    ?BANKED_LEAVE_XDATA
+   \   0000A0                REQUIRE T1CC2H
+   \   0000A0                REQUIRE T1CC2L
+   \   0000A0                REQUIRE T1CC1H
+   \   0000A0                REQUIRE T1CC1L
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   24FF         ADD     A,#-0x1
+   \   000002   1E           DEC     R6
+   \   000003   EF           MOV     A,R7
+   \   000004   34FF         ADDC    A,#-0x1
+   \   000006   FF           MOV     R7,A
+   \   000007                ; Setup parameters for call to function DelayMs
+   \   000007                ; Setup parameters for call to function DelayMs
+   \   000007   7A20         MOV     R2,#0x20
+   \   000009   7B4E         MOV     R3,#0x4e
+   \   00000B   12....       LCALL   ??DelayMs?relay
+   \   00000E   C3           CLR     C
+   \   00000F   EE           MOV     A,R6
+   \   000010   9402         SUBB    A,#0x2
+   \   000012   EF           MOV     A,R7
+   \   000013   9400         SUBB    A,#0x0
+   \   000015   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   000003   EE           MOV     A,R6
+   \   000004   94F7         SUBB    A,#-0x9
+   \   000006   EF           MOV     A,R7
+   \   000007   9400         SUBB    A,#0x0
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   2401         ADD     A,#0x1
+   \   000002   0E           INC     R6
+   \   000003   EF           MOV     A,R7
+   \   000004   3400         ADDC    A,#0x0
+   \   000006   FF           MOV     R7,A
+   \   000007                ; Setup parameters for call to function DelayMs
+   \   000007                ; Setup parameters for call to function DelayMs
+   \   000007                ; Setup parameters for call to function DelayMs
+   \   000007   7AA8         MOV     R2,#-0x58
+   \   000009   7B61         MOV     R3,#0x61
+   \   00000B   12....       LCALL   ??DelayMs?relay
+   \   00000E   C3           CLR     C
+   \   00000F   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??DelayMs?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    DelayMs
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??InitLed?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    InitLed
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??P10_Normal_IO?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    P10_Normal_IO
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??P11_Normal_IO?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    P11_Normal_IO
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??LedPwm_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    LedPwm_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Use_LedPwm?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Use_LedPwm
+    179          
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     DelayMs              0      0     12
+     InitLed              0      0      0
+     LedPwm_Init          0      0     12
+     P10_Normal_IO        0      0      0
+     P11_Normal_IO        0      0      0
+     Use_LedPwm           0      0     12
+       -> LedPwm_Init     0      0     24
+       -> DelayMs         0      0     24
+       -> DelayMs         0      0     24
+       -> DelayMs         0      0     24
+       -> DelayMs         0      0     24
+       -> DelayMs         0      0     24
+
+
+   Segment part sizes:
+
+     Function/Label        Bytes
+     --------------        -----
+     _A_P1                    1
+     CLKCONSTA                1
+     CLKCONCMD                1
+     T1CC0L                   1
+     T1CC0H                   1
+     T1CC1L                   1
+     T1CC1H                   1
+     T1CC2L                   1
+     T1CC2H                   1
+     T1CTL                    1
+     T1CCTL1                  1
+     T1CCTL2                  1
+     PERCFG                   1
+     P1SEL                    1
+     P2SEL                    1
+     P1DIR                    1
+     P2DIR                    1
+     DelayMs                 24
+     InitLed                  8
+     P10_Normal_IO            6
+     P11_Normal_IO            6
+     LedPwm_Init             67
+     ?Subroutine2            16
+     Use_LedPwm             160
+     ?Subroutine1            22
+     ?Subroutine0            10
+     ?Subroutine3            16
+     ??DelayMs?relay          6
+     ??InitLed?relay          6
+     ??P10_Normal_IO?relay    6
+     ??P11_Normal_IO?relay    6
+     ??LedPwm_Init?relay      6
+     ??Use_LedPwm?relay       6
+
+ 
+ 335 bytes in segment BANKED_CODE
+  36 bytes in segment BANK_RELAYS
+  17 bytes in segment SFR_AN
+ 
+ 371 bytes of CODE memory
+   0 bytes of DATA memory (+ 17 bytes shared)
+
+Errors: none
+Warnings: none
